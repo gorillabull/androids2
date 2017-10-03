@@ -16,7 +16,7 @@ using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
 /*...*/
-
+using System.Threading.Tasks;
 
 namespace App1
 {
@@ -69,7 +69,7 @@ namespace App1
             SetContentView(Resource.Layout.Main);
             HttpClient client = new HttpClient();
             PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
-            
+            view = FindViewById<PlotView>(Resource.Id.plotView1);
             
 
 
@@ -81,11 +81,11 @@ namespace App1
             txtv2 = FindViewById<TextView>(Resource.Id.textView2);
             b2 = FindViewById<Button>(Resource.Id.button1);
             view1 = FindViewById<ImageView>(Resource.Id.imageView1);
-
+            
 
             var t = 5;
             t++;
-
+            
 
             //variables
             Stream stream;
@@ -125,7 +125,7 @@ namespace App1
                 txtv1.Text = "field found ";
 
             }
-
+            var dostuff = Task.Factory.StartNew(() => { txtv1.Text = "from thread"; });
 
             view.Model = CreatePlotModel();
 

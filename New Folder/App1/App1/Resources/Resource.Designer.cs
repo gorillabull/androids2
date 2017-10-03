@@ -44,23 +44,26 @@ namespace App1
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050003
-			public const int button1 = 2131034115;
-			
 			// aapt resource value: 0x7f050004
-			public const int imageView1 = 2131034116;
+			public const int button1 = 2131034116;
 			
 			// aapt resource value: 0x7f050000
-			public const int myButton = 2131034112;
+			public const int imageView1 = 2131034112;
+			
+			// aapt resource value: 0x7f050003
+			public const int myButton = 2131034115;
 			
 			// aapt resource value: 0x7f050005
-			public const int plot_view = 2131034117;
+			public const int plotView1 = 2131034117;
 			
-			// aapt resource value: 0x7f050001
-			public const int textView1 = 2131034113;
+			// aapt resource value: 0x7f050006
+			public const int plot_view = 2131034118;
 			
 			// aapt resource value: 0x7f050002
-			public const int textView2 = 2131034114;
+			public const int textView1 = 2131034114;
+			
+			// aapt resource value: 0x7f050001
+			public const int textView2 = 2131034113;
 			
 			static Id()
 			{
