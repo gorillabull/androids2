@@ -29,4 +29,8 @@
         android:layout_height="272.0dp"
         android:id="@+id/imageView1"
         android:layout_marginBottom="263.0dp" />
+  <OxyPlot.Xamarin.Android.PlotView
+    android:id="@+id/plot_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 </LinearLayout>

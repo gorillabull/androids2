@@ -53,6 +53,9 @@ namespace App1
 			// aapt resource value: 0x7f050000
 			public const int myButton = 2131034112;
 			
+			// aapt resource value: 0x7f050005
+			public const int plot_view = 2131034117;
+			
 			// aapt resource value: 0x7f050001
 			public const int textView1 = 2131034113;
 			
