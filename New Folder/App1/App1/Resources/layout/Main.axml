@@ -5,36 +5,56 @@
     android:layout_height="match_parent">
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
-        android:layout_width="match_parent"
+        android:layout_width="116.0dp"
         android:layout_height="53.0dp"
         android:id="@+id/imageView1"
-        android:layout_marginBottom="0.0dp" />
-    <TextView
-        android:text="more text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:layout_marginBottom="0.0dp"
+        android:layout_marginRight="0.0dp" />
     <TextView
         android:text="asfsadfText"
         android:layout_width="89.5dp"
         android:layout_height="wrap_content"
         android:id="@+id/textView1" />
-    <Button
-        android:id="@+id/myButton"
-        android:layout_width="58.5dp"
-        android:layout_height="55.0dp"
-        android:text="@string/hello" />
-    <Button
-        android:text="Button"
-        android:layout_width="64.5dp"
-        android:layout_height="56.0dp"
-        android:id="@+id/button1" />
     <OxyPlot.Xamarin.Android.PlotView
         android:layout_width="match_parent"
+        android:layout_height="162.0dp"
+        android:id="@+id/plotView1"
+        android:layout_marginTop="0.0dp" />
+    <TableLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/plotView1" />
+        android:id="@+id/tableLayout1">
+        <TableRow
+            android:id="@+id/tableRow1">
+            <Button
+                android:id="@+id/myButton"
+                android:text="@string/hello"
+                android:layout_column="0"
+                android:layout_width="97.5dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="Button"
+                android:id="@+id/button1"
+                android:layout_column="1"
+                android:layout_height="match_parent" />
+            <TextView
+                android:text="more text"
+                android:id="@+id/textView2"
+                android:layout_column="2"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2">
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3">
+        </TableRow>
+    </TableLayout>
     <OxyPlot.Xamarin.Android.PlotView
         android:id="@+id/plot_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="100.5dp" />
 </LinearLayout>

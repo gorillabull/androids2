@@ -20,6 +20,13 @@ using System.Threading.Tasks;
 
 namespace App1
 {
+    public class activity2: Activity
+    {
+
+    }
+
+
+
     [Activity(Label = "App1", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
@@ -64,14 +71,14 @@ namespace App1
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
             HttpClient client = new HttpClient();
             PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
             view = FindViewById<PlotView>(Resource.Id.plotView1);
             
-
+            
 
             //init UI 
             // Get our button from the layout resource,
