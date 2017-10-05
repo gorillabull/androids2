@@ -17,6 +17,7 @@ using OxyPlot.Axes;
 using OxyPlot.Series;
 /*...*/
 using System.Threading.Tasks;
+using Android.Content;
 
 namespace App1
 {
@@ -70,13 +71,17 @@ namespace App1
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+           
             base.OnCreate(savedInstanceState);
             
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            //SetContentView(Resource.Layout.layout1);
+
+
             HttpClient client = new HttpClient();
             PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
-            view = FindViewById<PlotView>(Resource.Id.plotView1);
+            //view = FindViewById<PlotView>(Resource.Id.plotView1);
             
             
 
@@ -88,14 +93,14 @@ namespace App1
             txtv2 = FindViewById<TextView>(Resource.Id.textView2);
             b2 = FindViewById<Button>(Resource.Id.button1);
             view1 = FindViewById<ImageView>(Resource.Id.imageView1);
-            
 
-            var t = 5;
-            t++;
+
+
+            button.Click += Button_Click;
             
 
             //variables
-            Stream stream;
+            Stream stream = null;
             Bitmap bmp1;
             JsonValue value = JsonValue.Parse(
                        "{" +
@@ -132,19 +137,34 @@ namespace App1
                 txtv1.Text = "field found ";
 
             }
-            var dostuff = Task.Factory.StartNew(() => { txtv1.Text = "from thread"; });
+            Task.Factory.StartNew(async () =>
+            {
+               stream =   await client.GetStreamAsync("https://i.imgur.com/OVXxVoA.jpg");
+                //Task<HttpResponseMessage> resp = client.PostAsync("http://70.173.104.68:81/thisisanextremelylongurljusttotestsomestuffoutmaily_thelengthlimit_of_a_url_sent_from_a_phone.", null);
+                bmp1 = BitmapFactory.DecodeStream(stream);
+                        view1.SetImageBitmap(bmp1);
+
+                
+            });
 
             view.Model = CreatePlotModel();
 
 
             //runnable code 
-            stream = client.GetStreamAsync("https://i.imgur.com/OVXxVoA.jpg").Result;
-            bmp1 = BitmapFactory.DecodeStream(stream);
-            view1.SetImageBitmap(bmp1);
+            
+            
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+           // button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
 
             b2.Click += B2_Click;
+        }
+
+        private void Button_Click(object sender, System.EventArgs e)
+        {
+            //SetContentView(Resource.Layout.layout1);
+            var intent = new Intent(this, typeof(App1.Resources.layout.Activity1));
+            //intent.PutStringArrayListExtra("phone_numbers", phoneNumbers);
+            StartActivity(intent);
         }
 
         private void B2_Click(object sender, System.EventArgs e)
