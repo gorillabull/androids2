@@ -19,6 +19,10 @@ using OxyPlot.Series;
 using System.Threading.Tasks;
 using Android.Content;
 
+
+using System.Collections.Generic;
+
+
 namespace App1
 {
     public class activity2: Activity
